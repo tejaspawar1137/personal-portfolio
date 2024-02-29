@@ -45,25 +45,14 @@ const Card = styled.div`
     flex-direction: column;
     gap: 12px;
     transition: all 0.3s ease-in-out;
-    &:hover{
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
-    }
+   
     @media only screen and (max-width: 768px){
         padding: 10px;
         gap: 8px;
         width: 300px;
     }
 
-    &:hover ${Document}{
-        display: flex;
-    }
-
-    &:hover ${Span}{
-        overflow: visible;
-        -webkit-line-clamp: unset;
-
-    }
+ 
 
     border: 0.1px solid #306EE8;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
@@ -80,6 +69,7 @@ const Image = styled.img`
     background-color: #000;
     border-radius: 10px;
     margin-top: 4px;
+    padding: 10px;
     @media only screen and (max-width: 768px){
         height: 40px;
     }
@@ -174,11 +164,7 @@ const ExperienceCard = ({ experience }) => {
                     </>
                 }
             </Description>
-            {experience.doc &&
-                <a href={experience.doc} target="new">
-                    <Document src={experience.doc} />
-                </a>
-            }
+          
         </Card>
     )
 }
